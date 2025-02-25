@@ -10,7 +10,7 @@ The blog allows users to sign in and use a CMS to create new posts or articles. 
 - **Laravel UI Auth** – User authentication system  
 - **Validation Request Files** – Form validation with request classes  
 - **Services for Controller Code** – Organized service layer for business logic  
-- **Traits/Helpers** – Reusable functions for cleaner code  
+- **Helpers** – Reusable functions for cleaner code  
 - **Server-side Datatables** – Efficient data display and pagination  
 - **Middleware** – Access control and security  
 - **Flash Messages** – User-friendly notifications  
