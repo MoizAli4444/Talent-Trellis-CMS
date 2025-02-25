@@ -19,7 +19,7 @@ The blog allows users to sign in and use a CMS to create new posts or articles. 
 - **Error Handling in Blade** – Improved user experience  
 - **Accessors & Mutators** – Data transformation in models  
 - **Spatie Role & Permission** – Role-based access control  
-- **Unit & Feature Tests** – Ensuring code reliability  
+- **Feature Tests** – Ensuring code reliability  
 - **Dummy Image Handling** – Default image when no upload is provided  
 - **and more** 
 
