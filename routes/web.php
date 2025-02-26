@@ -36,10 +36,10 @@ Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
-    Route::resource('posts', PostController::class)->except(['index', 'show']);
-    Route::resource('articles', ArticleController::class)->except(['index', 'show']);
+    Route::resource('posts', PostController::class);
+    Route::resource('articles', ArticleController::class);
 });
 
 // Public Routes (No Authentication Required)
-Route::resource('posts', PostController::class)->only(['index', 'show']);
-Route::resource('articles', ArticleController::class)->only(['index', 'show']);
+// Route::resource('posts', PostController::class)->only(['index', 'show']);
+// Route::resource('articles', ArticleController::class)->only(['index', 'show']);

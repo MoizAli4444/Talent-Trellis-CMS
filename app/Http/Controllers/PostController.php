@@ -54,9 +54,7 @@ class PostController extends Controller
      */
     public function show($slug)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'You must be logged in to create an article.');
-        }
+    
         // check if post exists
         $post = findOrAborts(Post::class, 'slug', $slug);
      
