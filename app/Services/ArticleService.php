@@ -64,7 +64,17 @@ class ArticleService
     public function createArticle($data)
     {
 
-        $imagePath = $data->file('image') ? $data->file('image')->store('images', 'public') : 'images/default.png';
+        // $imagePath = $data->file('image') ? $data->file('image')->store('images', 'public') : 'images/default.png';
+
+        if ($data->hasFile('image')) {
+            $file = $data->file('image');
+            $timestamp = now()->timestamp; // Get current timestamp
+            $extension = $file->getClientOriginalExtension(); // Get file extension
+            $filename = "image_{$timestamp}.{$extension}"; // Generate unique filename
+            $imagePath = $file->storeAs('uploads', $filename, 'public'); // Store file in 'public/uploads'
+        } else {
+            $imagePath = 'uploads/default.png'; // Default image path
+        }
 
         // dd("");
 

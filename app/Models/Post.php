@@ -31,11 +31,19 @@ class Post extends Model
         ];
     }
 
+    // protected function image(): Attribute
+    // {
+    //     return Attribute::make(
+    //         get: fn ($value) => $value ? asset('storage/' . ltrim($value, 'storage/')) : asset('storage/images/default.png'),
+    //         set: fn ($value) => $value ?: 'images/default.png'
+    //     );
+    // }
+
     protected function image(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => $value ? asset('storage/' . ltrim($value, 'storage/')) : asset('storage/images/default.png'),
-            set: fn ($value) => $value ?: 'images/default.png'
+            get: fn($value) => $value ? asset("storage/{$value}") : asset("uploads/default.png"),
+            set: fn($value) => $value ?: 'uploads/default.png'
         );
     }
     
